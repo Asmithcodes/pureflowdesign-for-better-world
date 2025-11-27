@@ -1,0 +1,7 @@
+{
+  "name": "PureFlowDesign for better World",
+  "description": "An expert engineering assistant for designing water and wastewater treatment plants based on Indian regulatory standards. It provides design calculations, process flow diagrams, compliance checklists, and more.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
