@@ -206,7 +206,7 @@ const analysisSchema = (projectType: ProjectType) => {
 };
 
 export const analyzeInstructionsForParameters = async (projectData: ProjectData): Promise<{ parameters: Partial<ProjectData>, summary: string }> => {
-    const model = 'gemini-2.5-flash-preview-04-17';
+    const model = 'gemini-2.5-flash-lite';
     const schema = analysisSchema(projectData.projectType);
     
     const systemInstruction = `You are an intelligent assistant that extracts key technical parameters and summarizes instructions for designing a water treatment plant. Analyze the provided text, files (images, documents), and audio. Your goal is to populate a JSON object with specific values and create a comprehensive summary.`;
@@ -277,7 +277,7 @@ export const analyzeInstructionsForParameters = async (projectData: ProjectData)
 };
 
 export const generateDesign = async (projectData: ProjectData): Promise<DesignResults> => {
-    const model = 'gemini-2.5-flash-preview-04-17';
+    const model = 'gemini-2.5-flash-lite';
     const systemInstruction = generateSystemInstruction(projectData);
     const textPrompt = generatePrompt(projectData);
 
@@ -334,7 +334,7 @@ const pfdSchema = {
 };
 
 export const regeneratePfd = async (projectData: ProjectData): Promise<{ svgContent: string }> => {
-    const model = 'gemini-2.5-flash-preview-04-17';
+    const model = 'gemini-2.5-flash-lite';
 
     const systemInstruction = `You are a world-class expert engineering assistant from India, specializing in creating professional, CAD-style Process & Instrumentation Diagram (P&IDs) for water treatment plants. Your task is to generate ONLY a valid SVG string based on the user's project data and instructions. Adhere strictly to Indian engineering standards and P&ID conventions. The SVG must conform to all requirements specified in the schema.`;
 
@@ -393,7 +393,7 @@ export const regeneratePfd = async (projectData: ProjectData): Promise<{ svgCont
 };
 
 export const editImage = async (base64ImageData: string, mimeType: string, prompt: string): Promise<string> => {
-    const model = 'gemini-2.5-flash-preview-04-17';
+    const model = 'gemini-2.5-flash-lite';
 
     const imagePart = {
         inlineData: {
