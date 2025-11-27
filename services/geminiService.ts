@@ -263,7 +263,7 @@ export const analyzeInstructionsForParameters = async (projectData: ProjectData)
             systemInstruction: systemInstruction,
             responseMimeType: "application/json",
             responseSchema: schema,
-            thinkingConfig: { thinkingBudget: 32768 },
+            thinkingConfig: { thinkingBudget: 24576 },
         }
     });
 
@@ -311,7 +311,7 @@ export const generateDesign = async (projectData: ProjectData): Promise<DesignRe
             responseMimeType: "application/json",
             responseSchema: responseSchema,
             // Per developer manual, use max thinking budget for this model.
-            thinkingConfig: { thinkingBudget: 32768 },
+            thinkingConfig: { thinkingBudget: 24576 },
         }
     });
 
@@ -378,7 +378,7 @@ export const regeneratePfd = async (projectData: ProjectData): Promise<{ svgCont
             systemInstruction: systemInstruction,
             responseMimeType: "application/json",
             responseSchema: pfdSchema,
-            thinkingConfig: { thinkingBudget: 32768 },
+            thinkingConfig: { thinkingBudget: 24576 },
         }
     });
 
